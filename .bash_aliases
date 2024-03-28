@@ -18,3 +18,6 @@ git68() {
 	git commit -m "$1"
 	git push
 }
+clone() {
+	git clone git@github.com:$1
+}
