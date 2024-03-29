@@ -30,3 +30,6 @@ updateallofmyreposffs() {
 		cd;
 	done
 }
+updateallofmyreposandbequieter() {
+	updateallofmyreposffs > /dev/null
+}
