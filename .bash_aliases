@@ -21,8 +21,9 @@ git68() {
 clone() {
 	git clone git@github.com:$1
 }
+alias findgits='find . | grep ".git$" | grep "/projects/"'
 updateallofmyreposffs() {
-	for psychopaths in $(find . | grep ".git$" | grep "/projects/");
+	for psychopaths in $(findgits);
 	do
 		cd $psychopaths
 		cd ..
@@ -32,4 +33,13 @@ updateallofmyreposffs() {
 }
 updateallofmyreposandbequieter() {
 	updateallofmyreposffs > /dev/null
+}
+getallofmygitdiffies() {
+	for psychopaths in $(findgits);
+	do
+		cd $psychopaths
+		cd ..
+		git diff
+		cd;
+	done
 }
